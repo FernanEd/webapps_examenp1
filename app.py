@@ -13,6 +13,7 @@ def index():
       if form.validate_on_submit():
         monto = form.monto.data
         comision = calcularComision(monto)
-        return render_template('resultado.html', monto = monto, comision = comision)
+        total = monto - comision
+        return render_template('resultado.html', monto = monto, comision = comision, total=total)
 
     return render_template('index.html', form = form)

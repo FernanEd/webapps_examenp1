@@ -1,6 +1,6 @@
 def calcularComision(num):
   if num < 50000:
-    return num * 0.05
+    return 5
   elif num < 250000:
     return num * 0.0365
   elif num < 500000:
