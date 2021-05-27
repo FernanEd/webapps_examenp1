@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+
+{% block title %}Calcular comisión{% endblock %}
+
+{% block content %}
+
+<h1>Calcular comisión</h1>
+
+<form action="/" method='POST'>
+  {{ form.csrf_token }}
+  <div>
+    {{ form.monto.label }} 
+    <br>
+    {{ form.monto() }}
+  </div>
+  {% if form.monto.errors %}
+    {% for error in form.monto.errors %}
+      <p class="error">
+        {{ error }}
+      </p> 
+    {% endfor %}
+  {% endif %}
+  <button type="submit">Calcular</button>
+</form>
+
+{% endblock %}
